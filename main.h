@@ -2,23 +2,24 @@
 
 #include <iostream>
 
-void displayFile();     // Отобразить на экран информацию о пациентах
-void addPatient();      // Добавить пациента
-void editFile();        // Изменить информацию о пациентах
-void removePatient();   // Удалить информацию о пациентах
-void sortInfo();        // Сортировка информации о пациентах
-void queryExec();       // Обработка запросов
-void header();          // Вывод шапки таблицы
-void tblTail();         // Вывод конца таблицы
-void add2(); // Пробная функция с новым способом добавления больных
+void displayFile();     // Display patient information on screen
+void addPatient();      // Add a patient
+void editFile();        // Edit patient information
+void removePatient();   // Delete patient information
+void sortInfo();        // Sort patient information
+void queryExec();       // Process queries
+void header();          // Output table header
+void tblTail();         // Output table footer
+void add2(); // Experimental function with a new method of adding patients
 
-// Вспомогательные функции выполняющие запросы.(вызываются только из функции queryExec())
+// Helper functions that perform queries (called only from queryExec() function)
 void foo1();
 void foo2();
 void foo3(); 
 void foo4();
 void foo5();
 void foo6();
+
 
 
 
