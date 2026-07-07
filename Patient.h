@@ -7,38 +7,38 @@ using std::string;
 class Patient
 {
 /*
-    Вспомогательный класс без методов,
-    для более удобного хранения введенных пользователем
-    данных перед их в файл.
+    Helper class without methods,
+    for more convenient storage of user input
+    data before saving to file.
 */
 
 public:
 
-    std::string pLastname, Pf, Pp;   // ФИО пациента
-    int day, month, year;       // дд.мм.гггг. рождения ПАЦИЕНТА
-    std::string department;          // Отделение в котором состоит пацент
-    std::string dName;   // ФИО Доктора
-    std::string diagnosis;           // Диагноз пациента
-    int day1, month1, year1;    // Дата поступления на стационар
-    int day2, month2, year2;    // Дата выписки пациента из больницы.
-    Patient ();                 // Объявление конструктора без параметров.
+    std::string pLastname, Pf, Pp;   // Patient's full name
+    int day, month, year;       // Date of birth (dd.mm.yyyy)
+    std::string department;          // Department where patient is registered
+    std::string dName;   // Doctor's full name
+    std::string diagnosis;           // Patient's diagnosis
+    int day1, month1, year1;    // Date of admission to hospital
+    int day2, month2, year2;    // Date of patient discharge from hospital
+    Patient ();                 // Constructor declaration without parameters
 
-    void setDoc();       // Выбор Врача в зависимости от отделения
-    void setDiagn();          // Выбор диагноза в зависимости от врача и отделения
+    void setDoc();       // Select doctor based on department
+    void setDiagn();          // Select diagnosis based on doctor and department
     void setDep();
 
-    static bool isDay(int);       // Проверка на то, является ли переданное число днём
-    static bool isMonth(int);     // Проверка на то, является ил переданное число месяцем
-    static bool isYear(int);      // Проверка на то, является ил переданное число годом
+    static bool isDay(int);       // Check if passed number is a valid day
+    static bool isMonth(int);     // Check if passed number is a valid month
+    static bool isYear(int);      // Check if passed number is a valid year
 
 
-    // Проверка на то, является ли Фамилией переданная строка. 
+    // Check if passed string is a valid last name
 
     static bool isLastname(string);
-    static string doLastname(string);    // Переводит регистры для соответствия формату фамилии в переданной строке.
+    static string doLastname(string);    // Converts case to match last name format
 
-    // Внимание!: функция принимает строку по указателю, проверяет на соответствие формы инициалов
-    // и поднимает букву в верхний регистр если она стоит в нижнем.
+    // Attention!: function takes string by pointer, checks initial format
+    // and converts letter to uppercase if it is lowercase.
     static bool isInit(string*);
 
 };
