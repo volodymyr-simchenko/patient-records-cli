@@ -1,44 +1,32 @@
 #pragma once
-
 #include <iostream>
-
 using std::string;
-
 class Patient
 {
 /*
-    Вспомогательный класс без методов,
-    для более удобного хранения введенных пользователем
-    данных перед их в файл.
+    Auxiliary class with no methods,
+    for convenient storage of user-entered
+    data before writing it to a file.
 */
-
 public:
-
-    std::string pLastname, Pf, Pp;   // ФИО пациента
-    int day, month, year;       // дд.мм.гггг. рождения ПАЦИЕНТА
-    std::string department;          // Отделение в котором состоит пацент
-    std::string dName;   // ФИО Доктора
-    std::string diagnosis;           // Диагноз пациента
-    int day1, month1, year1;    // Дата поступления на стационар
-    int day2, month2, year2;    // Дата выписки пациента из больницы.
-    Patient ();                 // Объявление конструктора без параметров.
-
-    void setDoc();       // Выбор Врача в зависимости от отделения
-    void setDiagn();          // Выбор диагноза в зависимости от врача и отделения
+    std::string pLastname, Pf, Pp;   // Patient full name
+    int day, month, year;       // dd.mm.yyyy of patient's date of birth
+    std::string department;          // Department the patient is assigned to
+    std::string dName;   // Doctor's full name
+    std::string diagnosis;           // Patient's diagnosis
+    int day1, month1, year1;    // Date of admission to hospital
+    int day2, month2, year2;    // Date of discharge from hospital
+    Patient ();                 // Default constructor declaration
+    void setDoc();       // Select doctor based on department
+    void setDiagn();          // Select diagnosis based on doctor and department
     void setDep();
-
-    static bool isDay(int);       // Проверка на то, является ли переданное число днём
-    static bool isMonth(int);     // Проверка на то, является ил переданное число месяцем
-    static bool isYear(int);      // Проверка на то, является ил переданное число годом
-
-
-    // Проверка на то, является ли Фамилией переданная строка. 
-
+    static bool isDay(int);       // Checks whether the given number is a valid day
+    static bool isMonth(int);     // Checks whether the given number is a valid month
+    static bool isYear(int);      // Checks whether the given number is a valid year
+    // Checks whether the given string is a valid surname.
     static bool isLastname(string);
-    static string doLastname(string);    // Переводит регистры для соответствия формату фамилии в переданной строке.
-
-    // Внимание!: функция принимает строку по указателю, проверяет на соответствие формы инициалов
-    // и поднимает букву в верхний регистр если она стоит в нижнем.
+    static string doLastname(string);    // Converts case to match the expected surname format in the given string.
+    // Note: function accepts a string by pointer, checks whether it matches
+    // the initials format and capitalizes the letter if it is lowercase.
     static bool isInit(string*);
-
 };
