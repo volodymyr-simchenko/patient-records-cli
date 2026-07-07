@@ -571,7 +571,7 @@ void Patient::setDep()
     int getInp;
     system("clear");
     bool dowhile = true;
-    while (dowhile) // Зацикленный ввод отделения, дабы избежать ошибок, если пользователь что-то введет не правильно.
+    while (dowhile) // Looped input for department selection to prevent errors if the user enters an invalid value.
     {
         cout << endl
              << "Выберите отделение в котором состоит пациент: " << endl;
