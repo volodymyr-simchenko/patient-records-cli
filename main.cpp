@@ -4,7 +4,7 @@
 #include "Patient.h"
 #include "main.h"
 
-// Доделать метод addPatient(), добавив в него сохранение в файл.
+// TODO: finish addPatient() method by adding file save functionality.
 
 using namespace std;
 
@@ -101,7 +101,7 @@ void addPatient ()
         return;      
     }
 
-    system("clear");    // Я работаю на линуксе поэтому я использую system("clear") вместо system("cls");
+    system("clear");    // Running on Linux, using system("clear") instead of system("cls")
     Patient patient;
 
     cout << "Добавление пацента: " << endl;
@@ -147,7 +147,7 @@ void addPatient ()
         }
     }
     
-    system("clear");    // Я работаю на линуксе поэтому я использую system("clear") вместо system("cls");
+    system("clear");    // Running on Linux, using system("clear") instead of system("cls")
 
     while(true)
     {
@@ -191,23 +191,21 @@ void addPatient ()
         }
     }
 
-    patient.setDep();  // Выбор отделения пользователем
+    patient.setDep();  // User selects department
 
     getchar();
-    getchar(); // в моем компиляторе нету system("pause"), а getchar() работает только если его прописать два раза
-    
-
+    getchar(); // system("pause") is not available in my compiler; getchar() only works when called twice
 
     system("clear");
     
-    patient.setDoc();       // Выбор доктора пользователем
+    patient.setDoc();       // User selects doctor
     cout << "Введите диагноз пациента:\t";
-    patient.setDiagn();     // Выбор диагноза пользователем
+    patient.setDiagn();     // User selects diagnosis
 
     getchar();
     getchar();
 
-    // Выбор даты поступления пациента на учет и его выписки.
+    // User selects patient admission and discharge dates.
 
     while(true)
     {
@@ -299,21 +297,21 @@ void addPatient ()
        
 }
 
-void editFile()         // Изменить информацию о пациентах
+void editFile()         // Edit patient records
 {}
 
-void removePatient()    // Удалить пацента
+void removePatient()    // Delete patient record
 {}
 
-void sortInfo() // Сортировка информации о пациентах
+void sortInfo()         // Sort patient records
 {}
 
-void queryExec()    // Обработка запросов
+void queryExec()        // Process queries
 {
     int getInp;
     do
     {
-        system("clear");    // Я работаю на линуксе поэтому я использую system("clear") вместо system("cls");
+        system("clear");    // Running on Linux, using system("clear") instead of system("cls")
         cout << '\t' << "Выберите запрос:" << endl
             << endl;
         cout << "1. Общее количество пациентов (по дате вхождения в стационар)" << endl;
